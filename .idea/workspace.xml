@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3653ae7b-5f00-4d66-86bd-6ae51efe07a1" name="Default Changelist" comment="todoList" />
+    <list default="true" id="3653ae7b-5f00-4d66-86bd-6ae51efe07a1" name="Default Changelist" comment="todoList">
+      <change beforePath="$PROJECT_DIR$/todo.js" beforeDir="false" afterPath="$PROJECT_DIR$/todo.js" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,8 +37,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/todo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="55" column="36" selection-start-line="55" selection-start-column="36" selection-end-line="55" selection-end-column="36" />
+            <state relative-caret-position="261">
+              <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -133,7 +135,7 @@
       <option name="presentableId" value="Default" />
       <updated>1575433395438</updated>
       <workItem from="1575433396678" duration="24769000" />
-      <workItem from="1578061285719" duration="47000" />
+      <workItem from="1578061285719" duration="1239000" />
     </task>
     <task id="LOCAL-00001" summary="todoList">
       <created>1578059357159</created>
@@ -153,10 +155,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24816000" />
+    <option name="totallyTimeSpent" value="26008000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="6" y="23" width="1415" height="797" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25345957" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -219,8 +222,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/todo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="55" column="36" selection-start-line="55" selection-start-column="36" selection-end-line="55" selection-end-column="36" />
+        <state relative-caret-position="261">
+          <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
         </state>
       </provider>
     </entry>

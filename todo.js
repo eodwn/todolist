@@ -15,15 +15,6 @@ deleteAll.addEventListener('click', function () {
     }
 });
 
-// checkAll.addEventListener('click', function () {
-//
-//     if(checkAll.checked){
-//         inputCheck.checked = "checked";
-//     } else {
-//         inputCheck.checked = "";
-//     }
-// });
-
 document.getElementById("addButton").addEventListener('click', function (){
     var li = document.createElement("li");
     var span = document.createElement("span");
@@ -35,6 +26,7 @@ document.getElementById("addButton").addEventListener('click', function (){
 
     var inputCheck = document.createElement("input");
     inputCheck.type = "checkbox";
+    inputCheck.className = "inputCheck";
 
     list.appendChild(li);
     li.append(inputCheck, span, deleteButton);
@@ -67,3 +59,17 @@ list.addEventListener('click', function (event){
 });
 
 // 전체 체크박스
+checkAll.addEventListener('click', function () {
+    var input = list.getElementsByTagName("input");
+    //var aa = ["a","b","c","d"];
+    
+    input.forEach(function(index){
+        console.log(index);
+    });
+
+    if(checkAll.checked){
+        input.checked = "checked";
+    } else {
+        input.checked = "";
+    }
+});
