@@ -60,16 +60,13 @@ list.addEventListener('click', function (event){
 
 // 전체 체크박스
 checkAll.addEventListener('click', function () {
-    var input = list.getElementsByTagName("input");
-    //var aa = ["a","b","c","d"];
-    
-    input.forEach(function(index){
-        console.log(index);
-    });
+    var input = list.querySelectorAll("input");
 
-    if(checkAll.checked){
-        input.checked = "checked";
-    } else {
-        input.checked = "";
-    }
+    input.forEach(function(item){
+        if(checkAll.checked){
+            item.checked = "checked";
+        } else {
+            item.checked = "";
+        }
+    });  
 });
