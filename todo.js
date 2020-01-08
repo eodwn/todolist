@@ -2,6 +2,7 @@ var list = document.getElementById("list");
 var input = document.getElementById("input");
 var deleteAll = document.getElementById("deleteAll");
 var checkAll = document.getElementById("checkAll");
+var deleteCompleted = document.getElementById("deleteCompleted");
 
 deleteAll.addEventListener('click', function () {
     while(list.children.length > 0){
@@ -64,7 +65,7 @@ list.addEventListener('click', function (event){
             selectSpan[0].className = "";
         } else{
             selectInput[0].checked = "checked";
-            selectSpan[0].className = "completed";
+            selectSpan[0].toggleC = "completed";
         }
     }
 
@@ -83,6 +84,17 @@ checkAll.addEventListener('click', function () {
             item.checked = "";
         }
     });  
+});
+
+deleteCompleted.addEventListener('click', function(){
+    var li = list.getElementsByTagName("li");
+    var input = list.querySelector("input");
+
+    if(input.checked){
+        while(list.children.length > 0){
+            list.removeChild(list.firstChild)
+        }
+    }
 });
 
 input.addEventListener('keyup', function(e){
