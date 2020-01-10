@@ -65,7 +65,15 @@ list.addEventListener('click', function (event){
             selectSpan[0].className = "";
         } else{
             selectInput[0].checked = "checked";
-            selectSpan[0].toggleC = "completed";
+            selectSpan[0].className = "completed";
+        }
+    }
+
+    if(event.target.tagName === "INPUT"){
+        if(selectInput[0].checked) {
+            selectSpan[0].className = "completed";
+        } else{
+            selectSpan[0].className = "";
         }
     }
 
@@ -76,6 +84,7 @@ list.addEventListener('click', function (event){
 
 checkAll.addEventListener('click', function () {
     var input = list.querySelectorAll("input");
+    var selectSpan = list.querySelectorAll("span");
 
     input.forEach(function(item){
         if(checkAll.checked){
@@ -83,19 +92,27 @@ checkAll.addEventListener('click', function () {
         } else {
             item.checked = "";
         }
-    });  
-});
-
-deleteCompleted.addEventListener('click', function(){
-    var li = list.getElementsByTagName("li");
-    var input = list.querySelector("input");
-
-    if(input.checked){
-        while(list.children.length > 0){
-            list.removeChild(list.firstChild)
+    }); 
+    
+    selectSpan.forEach(function(item){
+        if(checkAll.checked){
+            item.className = "completed";
+        } else {
+            item.className = "";
         }
-    }
+    }); 
 });
+
+// deleteCompleted.addEventListener('click', function(){
+//     var li = list.getElementsByTagName("li");
+//     var input = list.querySelector("input");
+
+//     if(input.checked){
+//         while(list.children.length > 0){
+//             list.removeChild(list.firstChild)
+//         }
+//     }
+// });
 
 input.addEventListener('keyup', function(e){
     if(e.keyCode===13){
