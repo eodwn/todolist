@@ -82,13 +82,11 @@ activeButton.addEventListener('click', function(){
     });
 });
 
-
 input.addEventListener('keyup', function(e){
     if(e.keyCode===13 && validateItemCount(e)){
         addTodoItem();
     }
 });
-
 
 list.addEventListener('click', function (event){
     var selectList = event.currentTarget;
@@ -120,7 +118,6 @@ list.addEventListener('click', function (event){
     }
 });
 
-
 var itemForEach = function(fn){
     var li = list.querySelectorAll("li");
     li.forEach(fn);
@@ -138,6 +135,8 @@ var validateItemCount = function(e){
     addButton.disabled = "";
     return true;
 }
+
+var data = []
 
 var addTodoItem = function(){
     var value = input.value;
@@ -162,8 +161,12 @@ var addTodoItem = function(){
     list.appendChild(li);
     li.append(inputCheck, span, deleteButton);
     span.append(value); 
+
+    //data.push({id: 1, value: value, checked: false})
 }
 
 var getParentNode = function(target) {
     return target.tagName === "LI" ? target : target.parentNode;
 };
+
+// 리액트 state 데이타 관리
