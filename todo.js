@@ -3,6 +3,8 @@ var input = document.getElementById("input");
 var deleteAll = document.getElementById("deleteAll");
 var checkAll = document.getElementById("checkAll");
 var deleteCompleted = document.getElementById("deleteCompleted");
+var activeButton = document.getElementById("activeButton");
+var allButton = document.getElementById("allButton");
 
 deleteAll.addEventListener('click', function () {
     while(list.children.length > 0){
@@ -34,18 +36,16 @@ var addTodoItem = function(){
 
     var addButton = document.getElementById("addButton");
 
-    if(list.children.length > 29){
-        alert("할일은 최대 30개까지 추가 가능합니다.");
-
-        input.disabled = "disabled";
-        addButton.disabled = "disabled";
-
-        return;
-    }
-
     list.appendChild(li);
     li.append(inputCheck, span, deleteButton);
-    span.append(value);  
+    span.append(value); 
+
+    // if(list.children.length > 1){
+    //     input.disabled = "disabled";
+    //     addButton.disabled = "disabled";
+    //     alert("할일은 최대 30개까지 추가 가능합니다.");
+    //     return;
+    // } 
 }
 
 var getParentNode = function(target) {
@@ -103,16 +103,47 @@ checkAll.addEventListener('click', function () {
     }); 
 });
 
-// deleteCompleted.addEventListener('click', function(){
-//     var li = list.getElementsByTagName("li");
-//     var input = list.querySelector("input");
+deleteCompleted.addEventListener('click', function(){
+    itemForEach(function(item){
+        if(item.querySelector('input').checked){
+            item.remove();
+        }
+    });
+});
 
-//     if(input.checked){
-//         while(list.children.length > 0){
-//             list.removeChild(list.firstChild)
-//         }
-//     }
-// });
+completedButton.addEventListener('click', function(){
+    itemForEach(function(item){
+        if(item.querySelector('input').checked === false){
+            item.style.display = "none";
+        } else {
+            item.style.display = "block";
+        }
+    });
+});
+
+allButton.addEventListener('click', function(){
+    itemForEach(function(item){
+        if(item.style.display === 'none'){
+            item.style.display = 'block';
+        }
+    })
+});
+
+activeButton.addEventListener('click', function(){
+    itemForEach(function(item){
+        if(item.querySelector('input').checked === true){
+            item.style.display = "none";
+            return;
+        }
+
+        item.style.display = "block";
+    });
+});
+
+var itemForEach = function(fn){
+    var li = list.querySelectorAll("li");
+    li.forEach(fn);
+}
 
 input.addEventListener('keyup', function(e){
     if(e.keyCode===13){
